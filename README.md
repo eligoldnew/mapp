@@ -37,14 +37,13 @@
 ## Stretch
 
 - [ ] Login: phone number, password
-- [ ] Settings Page: IMG upload, Name entry, AYO?
+- [ ] Settings Page: IMG upload, Name, AYO?
 
 - [ ] Leaflet: Set map bounds to 10 mile radius
-
+    - [ ] show the miles away of pins from active user
 * [ ] Leaflet: Allow user to drag pin, and make the pin IMG the user IMG
   - [ ] posting pin pulls IMG, Name, AYO from Settings Page
-    - [ ] show the miles away of pins from active user
+    
 
 - [ ] Users have their own guest map with their own markers and unique URL
-  - [ ] Show miles away from each user, limit map radius to 10 miles from user
   - [ ] Posting to Connections = post to guest map URL
