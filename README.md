@@ -1,7 +1,7 @@
 # Mapp
 
 - App detects users location (from browser or IP)
-- Guests of the website can leave a message
+- Guests of the website can create a message
 - A pin will be added to the map with the users location and message
 
 ## TODO
