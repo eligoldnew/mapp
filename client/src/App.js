@@ -116,6 +116,20 @@ class App extends Component {
     }));
   };
 
+  updatePosition = (event) => {
+    //https://github.com/PaulLeCam/react-leaflet/blob/master/example/components/draggable-marker.js
+    console.log('event fired onDragend: ', event)
+    console.log('distance dragged: ', event.distance);
+    const marker = event.target;
+    if (marker != null) {
+      this.setState({
+        location: marker.getLatLng(),
+      });
+    }
+
+    console.log('updated marker location: ', this.state.location);
+  };
+
   render() {
     const position = [this.state.location.lat, this.state.location.lng];
     return (
@@ -131,7 +145,12 @@ class App extends Component {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {this.state.haveUsersLocation ? (
-            <Marker position={position} icon={myIcon}></Marker>
+            <Marker
+              position={position}
+              icon={myIcon}
+              draggable
+              onDragend={this.updatePosition}
+            ></Marker>
           ) : (
             ""
           )}
@@ -140,6 +159,8 @@ class App extends Component {
               key={message._id}
               position={[message.latitude, message.longitude]}
               icon={messageIcon}
+              draggable
+              onDragend={this.updatePosition}
             >
               <Popup>
                 <p>
